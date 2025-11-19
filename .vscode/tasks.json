@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "del",
+            "args": [
+                "out/*"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "gcc src/main.c src/mem.c src/list.c src/string.c src/book.c -g -o 'out/main.exe'"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "out\\main.exe"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run C program",
+            "dependsOn": [
+                "clean",
+                "build",
+                "run"
+            ],
+            "dependsOrder": "sequence",
+            "type": "shell",
+            // "command": "cmd",
+            // "args": [
+            //     "/c",
+            //     "echo run C program finished"
+            // ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
