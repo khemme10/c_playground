@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/workspaces/c_playground/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
